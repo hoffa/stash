@@ -31,12 +31,4 @@ struct Stash {
             UserDefaults.standard.set(json, forKey: key)
         }
     }
-
-    static func get(_ key: String) -> Any? {
-        return UserDefaults.standard.value(forKey: key)
-    }
-
-    static func set(_ key: String, to value: Any?) {
-        UserDefaults.standard.set(value, forKey: key)
-    }
 }

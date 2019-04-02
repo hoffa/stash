@@ -20,9 +20,7 @@ struct Stash {
     static func read<T>(_ type: T.Type) -> [T] where T : Codable {
         let key = keyPrefix + String(describing: type)
         if let json = UserDefaults.standard.string(forKey: key) {
-            if let values = jsonDecode(json, as: [T].self) {
-                return values
-            }
+            return jsonDecode(json, as: [T].self) ?? []
         }
         return []
     }

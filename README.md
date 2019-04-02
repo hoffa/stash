@@ -5,6 +5,10 @@ Super simple iOS persistence.
 ## Example
 
 ```swift
+let firstLaunch = Stash.get("firstLaunch") ?? true
+
+Stash.set("firstLaunch", false)
+
 struct Dog : Codable {
     var name: String
     var age: Int

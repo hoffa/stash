@@ -1,6 +1,8 @@
 import UIKit
 
 struct Stash {
+    static let keyPrefix = "stash."
+
     static func jsonEncode<T>(_ value: T) -> String? where T : Encodable {
         guard let data = try? JSONEncoder().encode(value) else {
             return nil
@@ -16,7 +18,7 @@ struct Stash {
     }
 
     static func read<T>(_ type: T.Type) -> [T] where T : Codable {
-        let key = String(describing: type)
+        let key = keyPrefix + String(describing: type)
         if let json = UserDefaults.standard.string(forKey: key) {
             if let values = jsonDecode(json, as: [T].self) {
                 return values
@@ -27,7 +29,7 @@ struct Stash {
     
     static func write<T>(_ values: [T]) where T : Codable {
         if let json = jsonEncode(values) {
-            let key = String(describing: T.self)
+            let key = keyPrefix + String(describing: T.self)
             UserDefaults.standard.set(json, forKey: key)
         }
     }

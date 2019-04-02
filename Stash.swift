@@ -1,6 +1,6 @@
 import UIKit
 
-struct Realm {
+struct Stash {
     static func jsonEncode<T>(_ value: T) -> String? where T : Encodable {
         guard let data = try? JSONEncoder().encode(value) else {
             return nil

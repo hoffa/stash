@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 struct Stash {
     static let keyPrefix = "stash."

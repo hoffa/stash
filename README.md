@@ -4,7 +4,8 @@ Super simple iOS persistence.
 
 ## Usage
 
-Read stored objects with `read<T>(T.Type) -> [T]` and write back with `write<T>([T])`. `T` must be [`Codable`](https://developer.apple.com/documentation/swift/codable).
+Read stored values with `read<T>(T.Type) -> [T]` and write back with `write<T>([T])`.
+`T` must be [`Codable`](https://developer.apple.com/documentation/swift/codable).
 
 ## Example
 

@@ -5,6 +5,7 @@ Super simple iOS persistence.
 ## Usage
 
 Read stored values with `read<T>(T.Type) -> [T]` and write back with `write<T>([T])`.
+
 `T` must be [`Codable`](https://developer.apple.com/documentation/swift/codable).
 
 ## Example
@@ -17,8 +18,8 @@ struct Dog : Codable {
 
 var dogs = Stash.read(Dog.self)
 
-dogs.append(Dog(name: "Foo", age: 7))
-dogs.append(Dog(name: "Bar", age: 3))
+dogs.append(Dog(name: "Good", age: 7))
+dogs.append(Dog(name: "Boye", age: 3))
 
 Stash.write(dogs)
 ```
